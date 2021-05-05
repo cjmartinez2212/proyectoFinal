@@ -1,0 +1,25 @@
+<div class="card-header">
+    <div class="text-center text-danger">
+    <h3>Aperitivos</h3>
+</div>
+<div class="container-fluid d-flex flex-wrap justify-content-center">
+
+    <div *ngFor="let posicion of menu">
+        <div class="card m-3" style="width: 18rem;">
+            <img width="300px" height="200px" src={{posicion.imgUrl}} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{posicion.name}}</h5>
+              <p class="card-text">{{posicion.descripcion}}</p>
+              <h4 class="card-text">{{posicion.precio}}</h4>
+              <a href="#" class="btn btn-danger">Ordenar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid d-flex flex-wrap justify-content-center">
+<app-menu2></app-menu2></div>
+<div class="container-fluid d-flex flex-wrap justify-content-center">
+<app-menu3></app-menu3></div>
+<div class="container-fluid d-flex flex-wrap justify-content-center">
+<app-menu4></app-menu4></div>
+</div>
