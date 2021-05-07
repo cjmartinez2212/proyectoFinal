@@ -3,7 +3,7 @@
     <h3>Aperitivos</h3>
 </div>
 <div class="container-fluid d-flex flex-wrap justify-content-center">
-
+<!-- <p *ngFor="let menu of menuService.menu">{{menu.brand}}</p> -->
     <div *ngFor="let posicion of menu">
         <div class="card m-3" style="width: 18rem;">
             <img width="300px" height="200px" src={{posicion.imgUrl}} class="card-img-top" alt="...">
