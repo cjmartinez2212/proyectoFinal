@@ -1,0 +1,37 @@
+### Listar bebidas
+GET http://localhost:5000/bebidas
+
+### listar plato fuerte
+GET http://localhost:5000/platoFuerte
+
+### listar aperitivos
+GET http://localhost:5000/aperitivos
+
+### listar postres
+GET http://localhost:5000/postres
+
+### Listar menu
+GET http://localhost:5000
+
+### Crear platillo
+POST http://localhost:5000/
+Content-Type: application/json
+
+{
+    "nombre": "Coctel Frances",
+    "precio": "7500",
+    "categoria": "aperitivo",
+    "descripcion": "Fina de combinacion de Ron 1998 con crema de whiskey y con un baño de cookies and cream y vino blanco",
+    "imagen": "https://i.pinimg.com/originals/1d/aa/df/1daadf02af0590efe43b5cd29310aa5c.jpg" 
+}
+
+### Actualizar platilo
+PUT http://localhost:5000/608b67e2e786d338d8d43801
+Content-Type: application/json
+
+{
+    "precio": "1800 por docena"
+}
+
+### Eliminar platillo
+DELETE http://localhost:5000/609491c5fcf4691b503e215b

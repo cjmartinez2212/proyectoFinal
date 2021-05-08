@@ -1,0 +1,129 @@
+<div class="container">
+    <div class="row">
+      <!-- Form-->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">Administracion de productos</div>
+          <div class="card-body">
+            <form #productForm="ngForm">
+              <div class="form-group d-flex flex-column">
+                <input
+                  type="hidden"
+                  id="_id"
+                  name="_id"
+                  #name="ngModel"
+                  [(ngModel)]="menuService.selectedMenu._id"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group d-flex flex-column">
+                <label for="nombre">Nombre Platillo</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  #name="ngModel"
+                  [(ngModel)]="menuService.selectedMenu.nombre"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group d-flex flex-column">
+                <label for="precio">Precio del Platillo</label>
+                <input
+                  type="text"
+                  id="precio"
+                  name="precio"
+                  #name="ngModel"
+                  [(ngModel)]="menuService.selectedMenu.precio"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group d-flex flex-column">
+                <label for="categoria">Categoria del Platillo</label>
+                <select
+                  type="text"
+                  id="categoria"
+                  name="categoria"
+                  #name="ngModel"
+                  [(ngModel)]="menuService.selectedMenu.categoria"
+                  class="form-control"
+                >
+                <option value="aperitivo">Aperitivo</option>
+                <option value="bebida">Bebida</option>
+                <option value="plato_fuerte">Plato Fuerte</option>
+                <option value="postre">Postre</option>
+              </select>
+              </div>
+              <div class="form-group d-flex flex-column">
+                <label for="imagen">Imagen del Platillo</label>
+                <input
+                  type="text"
+                  id="imagen"
+                  name="imagen"
+                  #name="ngModel"
+                  [(ngModel)]="menuService.selectedMenu.imagen"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group d-flex flex-column">
+                <label for="descripcion">Descripcion del Platillo</label>
+                <input
+                  type="text"
+                  id="descripcion"
+                  name="descripcion"
+                  #name="ngModel"
+                  [(ngModel)]="menuService.selectedMenu.descripcion"
+                  class="form-control"
+                />
+              </div>
+              <button
+                class="btn btn-success mx-2"
+                (click)="createService(productForm)"
+              >
+                Guardar
+              </button>
+              <button class="btn btn-info mx-2" (click)="cleanForm(productForm)">
+                Limpiar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Tabla -->
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <thead>
+            <th>Nombre</th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>Categoria</th>
+            <!--<th>Marca</th>-->
+          </thead>
+          <tbody>
+            <tr *ngFor="let platillo of menuService.menus">
+              <td>{{ platillo.nombre }}</td>
+              <td>{{ platillo.precio }}</td>
+              <td>{{ platillo.updatedAt }}</td>
+              <td>{{ platillo.categoria }}</td>
+              <!--<td>{{ platillo.imagen }}</td>-->
+              <!-- Buttons -->
+              <td class="d-flex">
+                <a (click)="updateService(platillo)" class="mx-2 btn btn-warning"
+                  >Editar</a
+                >
+                <a
+                  (click)="deleteService(platillo._id)"
+                  class="mx-2 btn btn-danger"
+                  >Eliminar</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
